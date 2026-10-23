@@ -1,0 +1,122 @@
+{{< include /intro.qmd >}}
+
+{{< include /prior-study.qmd >}}
+
+{{< include /method.qmd >}}
+
+{{< include /results.qmd >}}
+
+## Acknowledgments {.light-centered .center}
+
+```{=html}
+<div style="width:88%;margin:0 auto;background-image:radial-gradient(circle,#E0DBE5 0.6px,transparent 0.6px);background-size:18px 18px;padding:1.1em 1.2em;border-radius:18px;font-size:0.9em;">
+
+ <div style="display:flex;flex-direction:column;gap:0.5em;">
+
+  <div style="display:flex;align-items:center;gap:0.8em;background:#FFFFFF;border:1px solid #C7C1E5;border-radius:14px;padding:0.45em 1em;box-shadow:0 14px 32px rgba(86,84,162,0.14),0 2px 6px rgba(44,62,80,0.07);">
+   <div style="width:1.9em;height:1.9em;border-radius:0.5em;background:#EEEDF8;border:1px solid #C7C1E5;display:flex;align-items:center;justify-content:center;color:#5654A2;flex-shrink:0;">
+    <i data-lucide="users" style="width:1em;height:1em;stroke-width:1.8;"></i>
+   </div>
+   <div style="text-align:left;">
+    <div style="font-family:'Maple Mono',monospace;font-size:0.52em;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#5654A2;">Co-authors</div>
+    <div style="font-size:0.6em;font-weight:700;color:#2C3E50;line-height:1.25;">Brian Tarroja, Matthew Dean, Kate Forrest (UC Irvine) &middot; Eric Hittinger (RIT) &middot; Alan Jenn (UC Davis) &middot; John Paul Helveston (GWU)</div>
+   </div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:0.8em;background:#FFFFFF;border:1px solid #F0DDB4;border-radius:14px;padding:0.45em 1em;box-shadow:0 14px 32px rgba(196,136,26,0.14),0 2px 6px rgba(44,62,80,0.07);">
+   <div style="width:1.9em;height:1.9em;border-radius:0.5em;background:#FEF5E7;border:1px solid #F0DDB4;display:flex;align-items:center;justify-content:center;color:#C4881A;flex-shrink:0;">
+    <i data-lucide="handshake" style="width:1em;height:1em;stroke-width:1.8;"></i>
+   </div>
+   <div style="text-align:left;">
+    <div style="font-family:'Maple Mono',monospace;font-size:0.52em;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#C4881A;">Funding</div>
+    <div style="font-size:0.6em;font-weight:700;color:#2C3E50;line-height:1.25;">Alfred P. Sloan Foundation (grant G-2023-20976) &middot; Helveston Lab, George Washington University</div>
+   </div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:0.8em;background:#FFFFFF;border:1px solid #BCDFC0;border-radius:14px;padding:0.45em 1em;box-shadow:0 14px 32px rgba(44,132,117,0.14),0 2px 6px rgba(44,62,80,0.07);">
+   <div style="width:1.9em;height:1.9em;border-radius:0.5em;background:#E5F2EE;border:1px solid #BCDFC0;display:flex;align-items:center;justify-content:center;color:#2C8475;flex-shrink:0;">
+    <i data-lucide="plug-zap" style="width:1em;height:1em;stroke-width:1.8;"></i>
+   </div>
+   <div style="text-align:left;">
+    <div style="font-family:'Maple Mono',monospace;font-size:0.52em;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#2C8475;">Utility partners</div>
+    <div style="font-size:0.6em;font-weight:700;color:#2C3E50;line-height:1.25;">Southern California Edison &middot; Pacific Gas &amp; Electric &middot; National Grid</div>
+   </div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:0.8em;background:#FFFFFF;border:1px solid #A6C4EA;border-radius:14px;padding:0.45em 1em;box-shadow:0 14px 32px rgba(58,125,201,0.14),0 2px 6px rgba(44,62,80,0.07);">
+   <div style="width:1.9em;height:1.9em;border-radius:0.5em;background:#DCE9FA;border:1px solid #A6C4EA;display:flex;align-items:center;justify-content:center;color:#3A7DC9;flex-shrink:0;">
+    <i data-lucide="folder-git-2" style="width:1em;height:1em;stroke-width:1.8;"></i>
+   </div>
+   <div style="text-align:left;">
+    <div style="font-family:'Maple Mono',monospace;font-size:0.52em;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#3A7DC9;">Data &amp; code</div>
+    <div style="font-size:0.6em;font-weight:700;color:#2C3E50;line-height:1.25;"><a href="https://github.com/pingfan-hu/2025-grid-peak-shaving-public" target="_blank" rel="noopener" style="font-family:'Maple Mono',monospace;">github.com/pingfan-hu/2025-grid-peak-shaving-public</a></div>
+   </div>
+  </div>
+
+ </div>
+
+ <div style="height:1px;background:linear-gradient(90deg,transparent,#C4C3E8,transparent);margin-top:1em;"></div>
+
+ <div style="display:flex;align-items:center;justify-content:center;gap:1.5em;margin-top:0.9em;">
+  <img src="figs/logo-sloan.png" style="height:1.8em;margin:0;"/>
+  <div style="width:1px;height:2em;background:#2C3E50;opacity:0.35;"></div>
+  <img src="figs/logo-helveston.png" style="height:1.8em;margin:0;"/>
+ </div>
+
+</div>
+```
+
+::: {.notes}
+This work is a collaboration across GWU, UC Irvine, RIT, and UC Davis, supported by the Alfred P. Sloan Foundation. Thanks to Southern California Edison, PG&E, and National Grid for their insights on utility program perspectives. All data, code, and simulation outputs are public on GitHub.
+:::
+
+## Thanks for listening! {.dark-centered .center}
+
+```{=html}
+<div style="width:66%;margin:0 auto;">
+
+ <a class="thanks-card" href="https://pingfan.org" target="_blank" rel="noopener" style="flex-direction:row;align-items:center;gap:0.8em;padding:0.8em 1.2em;margin-top:1.2em;width:100%;box-sizing:border-box;">
+  <div style="width:3em;height:3em;border-radius:50%;background-image:url('figs/pingfan-2.png');flex-shrink:0;background-size:cover;background-position:center;border:1.5px solid #DCE9FA;box-shadow:0 3px 10px rgba(58,125,201,0.15);"></div>
+  <div style="display:flex;flex-direction:column;gap:0.15em;">
+   <div style="font-size:0.8em;font-weight:700;color:#2C3E50;white-space:nowrap;line-height:1.2;">Pingfan Hu</div>
+   <div style="font-size:0.5em;color:#564232;white-space:nowrap;">George Washington University</div>
+  </div>
+  <span class="instructor-link instructor-link--blue" style="margin-left:auto;align-self:center;font-size:0.6em;padding:0.32em 0.85em;border:1.5px solid #3A7DC9;">pingfan.org</span>
+ </a>
+
+ <div style="width:70%;height:2px;margin:1.2em auto 0;border-radius:999px;background:linear-gradient(90deg,transparent,rgba(196,195,232,0.45),transparent);"></div>
+
+ <div class="thanks-nav" style="display:flex;background:#EFECE1;border-radius:999px;margin-top:1.2em;box-shadow:0 6px 22px rgba(0,0,0,0.2);overflow:hidden;">
+
+  <a href="https://pingfan.org/about.html" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4em;padding:0.55em 0;text-decoration:none;">
+   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:0.75em;height:0.75em;flex-shrink:0;"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"/></svg>
+   <span style="font-size:0.5em;font-weight:700;color:#2C3E50;">About</span>
+  </a>
+
+  <div style="width:1px;background:rgba(44,62,80,0.18);margin:0.5em 0;"></div>
+
+  <a href="https://pingfan.org/blog.html" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4em;padding:0.55em 0;text-decoration:none;">
+   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:0.75em;height:0.75em;flex-shrink:0;"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+   <span style="font-size:0.5em;font-weight:700;color:#2C3E50;">Blog</span>
+  </a>
+
+  <div style="width:1px;background:rgba(44,62,80,0.18);margin:0.5em 0;"></div>
+
+  <a href="https://pingfan.org/research" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4em;padding:0.55em 0;text-decoration:none;">
+   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:0.75em;height:0.75em;flex-shrink:0;"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+   <span style="font-size:0.5em;font-weight:700;color:#2C3E50;">Research</span>
+  </a>
+
+  <div style="width:1px;background:rgba(44,62,80,0.18);margin:0.5em 0;"></div>
+
+  <a href="https://pingfan.org/works.html" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4em;padding:0.55em 0;text-decoration:none;">
+   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:0.75em;height:0.75em;flex-shrink:0;"><path d="m16 6 4 14"/><path d="M12 6v14"/><path d="M8 8v12"/><path d="M4 4v16"/></svg>
+   <span style="font-size:0.5em;font-weight:700;color:#2C3E50;">Works</span>
+  </a>
+
+ </div>
+
+</div>
+```
+
+## Reference List {.center}

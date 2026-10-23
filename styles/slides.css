@@ -1,0 +1,189 @@
+/* Fonts */
+@import url('https://cdn.jsdelivr.net/npm/@fontsource/maple-mono@5.2.5/index.min.css');
+
+@font-face {
+  font-family: 'TsangerJinKai';
+  src: url('https://raw.githubusercontent.com/pingfan-hu/resources/main/fonts/TsangerJinKai02-W04.ttf') format('truetype');
+}
+
+/* TsangerJinKai draws ×, − and arrows as full-width CJK glyphs; serve those codepoints from Palatino */
+@font-face {
+  font-family: 'SymbolFix';
+  src: local('Palatino'), local('Palatino Linotype'), local('Book Antiqua');
+  unicode-range: U+003D, U+00D7, U+2013-2014, U+2018-201F, U+2190-2193, U+2212;
+}
+
+.reveal,
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: 'SymbolFix', 'TsangerJinKai', sans-serif;
+}
+
+/* Table */
+th {
+  font-size: 24px;
+}
+
+.reveal table th,
+.reveal table td {
+  vertical-align: middle;
+  border-bottom: none;
+}
+
+.centered-container {
+  text-align: center;
+  margin-top: 0.5em;
+  color: #FF5733;
+  border: 1px solid #C7C1E5;
+  padding: 10px;
+  max-width: 90%;
+  margin: 5px auto;
+  border-radius: 14px;
+  background-color: #FFFFFF;
+  box-shadow: 0 14px 32px rgba(86, 84, 162, 0.12), 0 2px 6px rgba(44, 62, 80, 0.07);
+}
+
+/* Approach panel on Research Questions slides */
+.approach {
+  max-width: 80%;
+  margin: 1em auto 0;
+  background-color: #DFE8EC;
+  border: 1px solid #C7C1E5;
+  border-radius: 14px;
+  padding: 12px 30px 16px;
+  text-align: center;
+  font-size: 28px;
+  line-height: 1.5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.approach-title {
+  font-weight: bold;
+  font-size: 32px;
+  color: #ED6D46;
+}
+
+.approach hr {
+  border: none;
+  border-top: 2px solid #ED6D46;
+  opacity: 0.45;
+  margin: 6px auto 10px;
+}
+
+.approach ol {
+  text-align: left;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.approach ol li {
+  margin: 6px 0;
+}
+
+/* Title-slide logo is a CSS background ON the #title-slide section (image set via
+   `style: "... background-image: url(figs/logo.png)"` in title-slide-attributes),
+   NOT Reveal's data-background layer. That keeps it INSIDE the scaled .slides stage,
+   so it sizes, positions, and scales relative to the slide content. */
+#title-slide {
+  background-repeat: no-repeat;
+  background-size: 25%;
+  background-position: right 7% center;
+}
+
+/* The theme caps title text at 58%, tuned for its default 28% logo. This
+   deck's logo is 25% at `right 7%`, so the circle starts ~68% across the
+   stage; widen the cap accordingly so the long subtitle lines don't wrap. */
+#title-slide > h1.title,
+#title-slide > .quarto-title-authors {
+  max-width: 66%;
+}
+
+.custom-title-slide h1 {
+  position: relative;
+  top: 5vh;
+  font-size: 1.3em !important;
+}
+
+.custom-title-slide .quarto-title-author-name {
+  position: relative;
+  top: 5vh;
+  font-size: 0.9em !important;
+}
+
+.reveal .slide-background-content {
+  background-position: 50% 80%;
+}
+.reveal a {
+  color: #3DA18A !important;
+}
+
+.reveal a:hover {
+  color: #236257 !important;
+}
+
+.reveal .dark-centered h1,
+.reveal .dark-centered h2,
+.reveal .dark-centered h3,
+.reveal .dark-centered h4,
+.reveal .dark-centered h5,
+.reveal .dark-centered h6 {
+  color: #F8F7F0 !important;
+}
+
+/* Thank-you slide: hover/press feedback for the nav pill links and the
+   presenter card (base styles live in the touhou extension). */
+.reveal .thanks-nav a {
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+.reveal .thanks-nav a:hover {
+  background-color: #C8DCF4;
+}
+.reveal .thanks-nav a:active {
+  background-color: #AECBEC;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+.reveal .thanks-card:hover {
+  background-color: #C8DCF4;
+}
+
+/* Reference slide: scale the citation list to fit one slide */
+.reveal #reference-list #refs {
+  font-size: 0.8em;
+}
+
+/* Figures: the theme's .purple-border is a hard 2px frame; this deck frames
+   figures as soft white cards to match its stat and takeaway cards. */
+.reveal .slides img.purple-border {
+  border: 1px solid #C7C1E5;
+  border-radius: 14px;
+  padding: 0.35em;
+  background: #FFFFFF;
+  box-shadow: 0 14px 32px rgba(86, 84, 162, 0.12), 0 2px 6px rgba(44, 62, 80, 0.07);
+  box-sizing: border-box;
+}
+
+/* Bullets: a short hairline instead of the default disc */
+.reveal ul {
+  list-style: none;
+}
+
+.reveal ul li {
+  position: relative;
+  padding-left: 1.1em;
+}
+
+.reveal ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: 0.55em;
+  height: 2px;
+  border-radius: 999px;
+  background: #9B8EA0;
+}

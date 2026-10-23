@@ -1,0 +1,248 @@
+## Prior grid studies assume enrollment is high and free {style="line-height: 1.5;" .light-centered .center}
+
+1. Most grid studies **assume** optimal or near-100% participation [@tarroja_importance_2015; @coignard_clean_2018], <span style="color: #739C69">but real pilots enroll far fewer</span>.
+2. Enrollment is **not free**: utilities must pay incentives [@bailey_show_2023; @wong_incentives_2023], <span style="color: #739C69">yet costs are rarely counted</span>.
+3. Few studies compare peak-shaving **across grid regions** with different load shapes.
+
+<br>
+
+::: {.centered-container style="color: #2C3E50;"}
+We connect [**consumer enrollment**]{style="color: #ED6D46;"} with [**grid simulation**]{style="color: #2980B9;"}.
+:::
+
+::: {.notes}
+The technical potential of managed charging is well documented, but most studies assume everyone participates for free. In reality, participation depends on incentives, and incentives cost money. And few studies ask whether the answer changes with the shape of the grid. That is the gap: we bring the empirical enrollment curve into a grid-scale simulation of two contrasting regions.
+:::
+
+## Research Questions {style="line-height: 2;" .light-centered .center}
+
+1. **Peak-shaving**: How much can SMC reduce peak demand in contrasting grid regions?
+
+2. **Cost efficiency**: How much does peak shaving cost per unit, and is more enrollment always better?
+
+<br>
+
+::: {.approach}
+[Approach]{.approach-title}
+
+---
+
+1. **Scenario-based simulation** for CAISO and NYISO.
+2. **Enrollment curve** from the prior study: incentives vs participation.
+:::
+
+::: {.notes}
+Two research questions. First, the physical side: how much peak demand can SMC actually shave, and does the answer depend on the region? Second, the economic side: what does that peak shaving cost, and is pushing enrollment higher always worth it?
+
+To answer them, we run a scenario-based simulation of CAISO and NYISO, and join it with the enrollment curve from the prior study, which links incentive levels to participation rates.
+:::
+
+## Two contrasting regions: [CAISO]{style="color: #ED6D46;"} and [NYISO]{style="color: #739C69;"} {.light-centered .center}
+
+```{=html}
+<div style="width:96%;margin:0 auto;">
+
+ <img src="figs/study/gea-map-highlight.png" style="height:410px;width:auto;margin:0 auto;display:block;"/>
+
+ <div style="border:1px solid #C7C1E5;border-radius:14px;padding:0;overflow:hidden;background:#FFFFFF;box-shadow:014px32pxrgba(86,84,162,0.12),02px6pxrgba(44,62,80,0.07);margin-top:0.5em;">
+  <table style="width:100%;border-collapse:collapse;text-align:center;font-size:28px;margin:0;">
+   <thead>
+    <tr style="background-color:#EEEDF8;">
+     <th style="width:16%;padding:10px 8px;border-bottom:2px solid #C4C3E8;border-right:1px solid #D4D3EE;"></th>
+     <th style="width:21%;padding:10px 8px;border-bottom:2px solid #C4C3E8;border-right:1px solid #D4D3EE;">Single families</th>
+     <th style="width:21%;padding:10px 8px;border-bottom:2px solid #C4C3E8;border-right:1px solid #D4D3EE;">Energy source</th>
+     <th style="width:21%;padding:10px 8px;border-bottom:2px solid #C4C3E8;border-right:1px solid #D4D3EE;">Net load shape</th>
+     <th style="width:21%;padding:10px 8px;border-bottom:2px solid #C4C3E8;">Seasonal effect</th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td style="padding:10px 8px;border-right:1px solid #D4D3EE;background-color:#EEEDF8;font-weight:700;color:#ED6D46;">CAISO</td>
+     <td style="padding:10px 8px;border-right:1px solid #D4D3EE;">7.69 million</td>
+     <td style="padding:10px 8px;border-right:1px solid #D4D3EE;">Solar</td>
+     <td style="padding:10px 8px;border-right:1px solid #D4D3EE;">"Duck curve"</td>
+     <td style="padding:10px 8px;">Minimal</td>
+    </tr>
+    <tr>
+     <td style="padding:10px 8px;border-top:1px solid #D4D3EE;border-right:1px solid #D4D3EE;background-color:#EEEDF8;font-weight:700;color:#739C69;">NYISO</td>
+     <td style="padding:10px 8px;border-top:1px solid #D4D3EE;border-right:1px solid #D4D3EE;">3.16 million</td>
+     <td style="padding:10px 8px;border-top:1px solid #D4D3EE;border-right:1px solid #D4D3EE;">Hydro</td>
+     <td style="padding:10px 8px;border-top:1px solid #D4D3EE;border-right:1px solid #D4D3EE;">Flat profile</td>
+     <td style="padding:10px 8px;border-top:1px solid #D4D3EE;">Strong in winter</td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+
+ <div style="text-align:center;font-size:28px;margin-top:0.6em;">Both <strong>lead in BEV adoption</strong>, with <strong>contrasting grid structures</strong>.</div>
+
+</div>
+```
+
+::: {.notes}
+The US grid divides into 18 regions. We picked California and New York because they are both BEV leaders but structurally opposite grids. CAISO has the solar duck curve with a steep evening ramp, and it behaves essentially the same across all four seasons. NYISO is flatter, relies more on dispatchable hydro, and is season-sensitive: winter overnight heating keeps the nighttime load elevated, which matters later in the results. This contrast lets us see how grid context shapes SMC performance.
+:::
+
+## Data Sources {.light-centered .center}
+
+<br>
+
+::: {style="border: 1px solid #C7C1E5; border-radius: 14px; padding: 0; overflow: hidden; background: #FFFFFF; box-shadow: 0 14px 32px rgba(86, 84, 162, 0.12), 0 2px 6px rgba(44, 62, 80, 0.07);"}
+
+<table style="width: 100%; border-collapse: collapse; text-align: center; font-size: 28px; margin: 0;">
+  <thead>
+    <tr style="background-color: #EEEDF8;">
+      <th style="width: 26%; padding: 12px 10px; border-right: 1px solid #D4D3EE; border-bottom: 2px solid #C4C3E8; font-size: 32px; color: #ED6D46;">Source</th>
+      <th style="width: 38%; padding: 12px 10px; border-right: 1px solid #D4D3EE; border-bottom: 2px solid #C4C3E8; font-size: 32px; color: #739C69;">Provides</th>
+      <th style="width: 36%; padding: 12px 10px; border-bottom: 2px solid #C4C3E8; font-size: 32px; color: #5654A2;">Role in Simulation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 18px 10px; border-right: 1px solid #D4D3EE;">2022 NHTS</td>
+      <td style="padding: 18px 10px; border-right: 1px solid #D4D3EE;">Real trip records nationwide</td>
+      <td style="padding: 18px 10px;">Charge time &amp; energy needs</td>
+    </tr>
+    <tr>
+      <td style="padding: 18px 10px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE;">2025 GridStatus.io</td>
+      <td style="padding: 18px 10px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE;">Net load time series</td>
+      <td style="padding: 18px 10px; border-top: 1px solid #D4D3EE;">Regional grid baselines</td>
+    </tr>
+    <tr>
+      <td style="padding: 18px 10px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE;">2025 U.S. Census</td>
+      <td style="padding: 18px 10px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE;">Single-family counts</td>
+      <td style="padding: 18px 10px; border-top: 1px solid #D4D3EE;">Scale to total fleet energy</td>
+    </tr>
+    <tr>
+      <td style="padding: 18px 10px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE;">Prior study</td>
+      <td style="padding: 18px 10px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE;">Enrollment curve</td>
+      <td style="padding: 18px 10px; border-top: 1px solid #D4D3EE;">Cost efficiency analysis</td>
+    </tr>
+  </tbody>
+</table>
+
+:::
+
+::: {.notes}
+Four data sources: NHTS trips define when vehicles travel and how much energy they need; GridStatus.io gives us actual 2025 net load for both regions; the Census scales our 10,000 simulated vehicles up to regional fleet sizes; and the discrete choice experiment from the prior study translates incentive dollars into enrollment rates. Net load means total consumption minus variable renewables, so it is the demand that dispatchable generation must serve.
+:::
+
+## Vehicle & Charging Assumptions {.light-centered .center}
+
+```{=html}
+<div style="width:88%;margin:0 auto;background-image:radial-gradient(circle,#E0DBE5 0.6px,transparent 0.6px);background-size:18px 18px;padding:1.5em 1.2em;border-radius:18px;">
+
+ <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:0.9em;">
+
+  <div style="grid-column:1/3;background:#FFFFFF;border:1px solid #C7C1E5;border-radius:14px;padding:1em 0.6em 0.9em;box-shadow:0 14px 32px rgba(86,84,162,0.2),0 2px 6px rgba(44,62,80,0.07);display:flex;flex-direction:column;align-items:center;gap:0.4em;">
+   <div style="width:2.2em;height:2.2em;border-radius:0.55em;background:#EEEDF8;border:1px solid #C7C1E5;display:flex;align-items:center;justify-content:center;color:#5654A2;">
+    <i data-lucide="car-front" style="width:1.1em;height:1.1em;stroke-width:1.8;"></i>
+   </div>
+   <div style="font-family:'Maple Mono',monospace;font-size:0.42em;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#5654A2;">BEV Range</div>
+   <div style="font-size:0.72em;font-weight:700;color:#2C3E50;line-height:1.2;">200 miles</div>
+  </div>
+
+  <div style="grid-column:3/5;background:#FFFFFF;border:1px solid #F0DDB4;border-radius:14px;padding:1em 0.6em 0.9em;box-shadow:0 14px 32px rgba(196,136,26,0.2),0 2px 6px rgba(44,62,80,0.07);display:flex;flex-direction:column;align-items:center;gap:0.4em;">
+   <div style="width:2.2em;height:2.2em;border-radius:0.55em;background:#FEF5E7;border:1px solid #F0DDB4;display:flex;align-items:center;justify-content:center;color:#C4881A;">
+    <i data-lucide="zap" style="width:1.1em;height:1.1em;stroke-width:1.8;"></i>
+   </div>
+   <div style="font-family:'Maple Mono',monospace;font-size:0.42em;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#C4881A;">Charging</div>
+   <div style="font-size:0.72em;font-weight:700;color:#2C3E50;line-height:1.2;">Level 2 (6.48 kW)</div>
+  </div>
+
+  <div style="grid-column:5/7;background:#FFFFFF;border:1px solid #BCDFC0;border-radius:14px;padding:1em 0.6em 0.9em;box-shadow:0 14px 32px rgba(44,132,117,0.2),0 2px 6px rgba(44,62,80,0.07);display:flex;flex-direction:column;align-items:center;gap:0.4em;">
+   <div style="width:2.2em;height:2.2em;border-radius:0.55em;background:#E5F2EE;border:1px solid #BCDFC0;display:flex;align-items:center;justify-content:center;color:#2C8475;">
+    <i data-lucide="battery-charging" style="width:1.1em;height:1.1em;stroke-width:1.8;"></i>
+   </div>
+   <div style="font-family:'Maple Mono',monospace;font-size:0.42em;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#2C8475;">Battery SOC</div>
+   <div style="font-size:0.72em;font-weight:700;color:#2C3E50;line-height:1.2;">20% &ndash; 80%</div>
+  </div>
+
+  <div style="grid-column:2/4;background:#FFFFFF;border:1px solid #A6C4EA;border-radius:14px;padding:1em 0.6em 0.9em;box-shadow:0 14px 32px rgba(58,125,201,0.2),0 2px 6px rgba(44,62,80,0.07);display:flex;flex-direction:column;align-items:center;gap:0.4em;">
+   <div style="width:2.2em;height:2.2em;border-radius:0.55em;background:#DCE9FA;border:1px solid #A6C4EA;display:flex;align-items:center;justify-content:center;color:#3A7DC9;">
+    <i data-lucide="route" style="width:1.1em;height:1.1em;stroke-width:1.8;"></i>
+   </div>
+   <div style="font-family:'Maple Mono',monospace;font-size:0.42em;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#3A7DC9;">Travel Needs</div>
+   <div style="font-size:0.72em;font-weight:700;color:#2C3E50;line-height:1.2;">Guaranteed</div>
+  </div>
+
+  <div style="grid-column:4/6;background:#FFFFFF;border:1px solid #F0C5BA;border-radius:14px;padding:1em 0.6em 0.9em;box-shadow:0 14px 32px rgba(212,95,71,0.2),0 2px 6px rgba(44,62,80,0.07);display:flex;flex-direction:column;align-items:center;gap:0.4em;">
+   <div style="width:2.2em;height:2.2em;border-radius:0.55em;background:#FCEEEC;border:1px solid #F0C5BA;display:flex;align-items:center;justify-content:center;color:#D45F47;">
+    <i data-lucide="hand" style="width:1.1em;height:1.1em;stroke-width:1.8;"></i>
+   </div>
+   <div style="font-family:'Maple Mono',monospace;font-size:0.42em;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#D45F47;">Overrides</div>
+   <div style="font-size:0.72em;font-weight:700;color:#2C3E50;line-height:1.2;">2 &ndash; 3 per month</div>
+  </div>
+
+ </div>
+
+</div>
+```
+
+::: {.notes}
+Key assumptions: 200-mile BEVs (48.4 kWh, 0.242 kWh per mile) on Level 2 home charging at 7.2 kW with 90 percent efficiency, batteries kept between 20 and 80 percent, and travel is never compromised: sessions that cannot be shifted stay in place as override events, which stay within 2 to 3 per vehicle per month.
+:::
+
+## Simulation Overview {.light-centered .center}
+
+![](/figs/study/workflow.png){fig-align="center" width="100%" .purple-border}
+
+::: {.notes}
+The framework has two stages. Stage one is the peak-shaving model: three data sources feed a simulation that sweeps TOU window configurations, adoption rates, date ranges, and enrollment levels from 0 to 100 percent. Stage two takes the best-performing outcomes and joins them with the consumer enrollment curve to compute cost efficiency frontiers. Let me walk through the key steps.
+:::
+
+## Step 1: BEV Charging Load Profile {.light-centered .center}
+
+![](/figs/study/step-1-ev-load.png){fig-align="center" width="85%" .purple-border}
+
+::: {style="font-size: 30px;"}
+Simulation of 10,000 vehicles based on ~26,000 trip records from 2022 NHTS.
+:::
+
+::: {.notes}
+Step one builds the unmanaged BEV charging load from about 26,000 travel records in the 2022 NHTS. We simulate 10,000 vehicles with 200-mile range on Level 2 home charging, keeping batteries between 20 and 80 percent. People come home in the evening and plug in, so the load peaks at 7 PM, exactly on top of the existing grid evening peak. All plots start at 7 AM so the evening peak sits in the center and the overnight valley forms one block on the right.
+:::
+
+## Step 2: BEV Load Peak Shaving {.light-centered .center}
+
+![](/figs/study/step-2-ev-peak-shaving.png){fig-align="center" width="85%" .purple-border}
+
+::: {style="font-size: 28px;"}
+**Five configurations** with different peak/valley windows.
+:::
+
+::: {.notes}
+Step two shifts that load. From 10 AM, charging is suppressed unless the battery would fall below 20 percent or tomorrow's travel would be at risk; deferred demand is delivered at maximum rate once the valley window opens. Sessions that cannot be shifted stay in place as override events, which stay within 2 to 3 per vehicle per month. The five configurations differ only in when the valley opens, from 8 PM to midnight. This is drawn at 50 percent enrollment so you can see half of the fleet shifted and half charging as usual. The next slide compares them.
+:::
+
+## TOU window: 11 PM valley start performs best {.light-centered .center}
+
+![](/figs/study/tou-window-comparison.png){fig-align="center" width="92%" .purple-border}
+
+::: {.notes}
+Cost efficiency frontiers for the five TOU configurations in CAISO on the annual average day. S04, with the valley window starting at 11 PM, delivers the most peak shaving at every cost level, so all reported results use it. An 8 PM start is clearly worst: it opens the valley while the grid is still near its peak.
+:::
+
+## Step 3: Net Load + BEV & Peak Shaving {.light-centered .center}
+
+![](/figs/study/step-4-grid-peak-shaving.png){fig-align="center" width="85%" .purple-border}
+
+::: {style="font-size: 28px;"}
+BEV load scaled to fleet size and stacked on net load.
+:::
+
+::: {.notes}
+Step three scales the BEV load to the fleet and stacks it on the grid net load, the shaded area. We assume one BEV per detached single-family household, so each simulated vehicle represents 769 vehicles in CAISO and 316 in NYISO. The black line is total load with no SMC; the green line is full enrollment: the evening peak drops and the load moves into the overnight valley.
+:::
+
+## Enrollment Curve from Prior Study {.light-centered .center}
+
+![](/figs/study/enrollment-curve.png){fig-align="center" width="85%" .purple-border}
+
+::: {style="font-size: 28px;"}
+Mixed logit prediction based on 1,356 real BEV owners.
+:::
+
+::: {.notes}
+This is the bridge between the two studies. The mixed logit model, holding non-monetary attributes fixed, gives the enrollment rate as a function of the monthly incentive. About 30 percent would participate with no payment at all, 20 dollars a month gets you to about 60 percent, but full enrollment would take 85 dollars per household per month. The curve is concave, and since utilities pay a uniform incentive to everyone, total program cost grows non-linearly with enrollment.
+:::

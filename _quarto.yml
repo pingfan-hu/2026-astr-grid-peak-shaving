@@ -1,0 +1,37 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+  resources:
+    - figs/pingfan-2.png
+    - figs/logo-sloan.png
+    - figs/logo-helveston.png
+
+pagetitle: "ASTR 2026 - BEV Supplier-Managed Charging"
+title: "Quantifying the Peak-Shaving<br>Potential and Cost Efficiency<br>of BEV Supplier-Managed Charging<br><span style='font-size: 0.7em; color: #2C8475; display: inline-block; line-height: 1.5;'>Integrating consumer enrollment<br>with grid simulation in CAISO and NYISO</span>"
+author: "<br>**Pingfan Hu**<br>George Washington University<br><span style='font-size: 0.7em; display: inline-block; margin-top: 0.6em; line-height: 1.4;'>with Brian Tarroja, Matthew Dean, Kate Forrest,<br>Eric Hittinger, Alan Jenn, and John Paul Helveston</span>"
+
+format:
+  touhou-revealjs:
+    smaller: false
+    css: styles/slides.css
+    bibliography: bibliography.bib
+    csl: styles/apa.csl
+    slide-number: true
+    embed-resources: false
+    auto-stretch: false
+    preview-links: auto
+    logo: figs/logo.png
+    footer: "<a href='https://pingfan.org'>Pingfan Hu</a> - ASTR 2026"
+    link-external-newwindow: true
+    link-external-icon: false
+    center-title-slide: true
+    code-block-height: 650px
+    title-slide-attributes:
+      class: custom-title-slide
+      style: "text-align:left; background-image: url(figs/logo.png);"
+
+execute:
+  warning: false
+  echo: false

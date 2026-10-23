@@ -1,0 +1,44 @@
+title: Touhou Revealjs
+author: Pingfan Hu
+version: 1.0.0
+quarto-required: ">=1.6"
+contributes:
+  formats:
+    revealjs:
+      smaller: false
+      theme: touhou.scss
+      # 16:10 canvas matching the Mac screens these decks are presented on.
+      # Quarto's default 1050x700 (3:2) lets tall content spill into the
+      # invisible outer margin on a 16:10 display, which then extrudes past
+      # the slide card in overview mode.
+      width: 1280
+      height: 800
+      slide-number: true
+      # Always show reveal's left/right edge arrows. Quarto's default is
+      # `controls: auto`, which its quarto-support plugin resolves at runtime to
+      # `(inIframe && !localhost) || hasVerticalSlides` — so a deck opened
+      # directly (not embedded) never gets arrows, and neither does any deck
+      # served from localhost during preview. These decks are presented both
+      # ways, so pin it on rather than letting the context decide.
+      controls: true
+      embed-resources: false
+      auto-stretch: false
+      preview-links: false
+      link-external-newwindow: true
+      link-external-icon: false
+      center-title-slide: true
+      code-block-height: 650px
+      # No title-slide-attributes here on purpose: the format must not force a
+      # title-slide look. Each deck sets its own (background color/image, class)
+      # in its _quarto.yml; a deck wanting the navy title opts in with
+      # `data-background-color: "#2C3E50"` + `class: dark-centered`.
+      include-in-header:
+        - lucide.html
+        - practice-timer.html
+        - pdf-export.html
+      include-after-body:
+        - control-buttons.html
+        - print-footer.html
+        - orientation.html
+        - freeze-gifs.html
+        - overview-nav.html
