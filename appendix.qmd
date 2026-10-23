@@ -1,0 +1,264 @@
+## <span style="color: #FFB84D; display: block; margin-bottom: 0.5em;">Appendix</span>Supporting Details {.dark-centered .center}
+
+## Data Sources {.light-centered .center}
+
+<br>
+
+::: {style="border: 1px solid #C7C1E5; border-radius: 14px; padding: 0; overflow: hidden; background: #FFFFFF; box-shadow: 0 14px 32px rgba(86, 84, 162, 0.12), 0 2px 6px rgba(44, 62, 80, 0.07);"}
+
+<table style="width: 100%; border-collapse: collapse; text-align: center; font-size: 28px; margin: 0;">
+  <thead>
+    <tr style="background-color: #EEEDF8;">
+      <th style="width: 26%; padding: 12px 10px; border-right: 1px solid #D4D3EE; border-bottom: 2px solid #C4C3E8; font-size: 32px; color: #ED6D46;">Source</th>
+      <th style="width: 38%; padding: 12px 10px; border-right: 1px solid #D4D3EE; border-bottom: 2px solid #C4C3E8; font-size: 32px; color: #739C69;">Provides</th>
+      <th style="width: 36%; padding: 12px 10px; border-bottom: 2px solid #C4C3E8; font-size: 32px; color: #5654A2;">Role in Simulation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 18px 10px; border-right: 1px solid #D4D3EE;">2022 NHTS</td>
+      <td style="padding: 18px 10px; border-right: 1px solid #D4D3EE;">Real trip records nationwide</td>
+      <td style="padding: 18px 10px;">Charge time &amp; energy needs</td>
+    </tr>
+    <tr>
+      <td style="padding: 18px 10px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE;">2025 GridStatus.io</td>
+      <td style="padding: 18px 10px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE;">Net load time series</td>
+      <td style="padding: 18px 10px; border-top: 1px solid #D4D3EE;">Regional grid baselines</td>
+    </tr>
+    <tr>
+      <td style="padding: 18px 10px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE;">2025 U.S. Census</td>
+      <td style="padding: 18px 10px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE;">Single-family counts</td>
+      <td style="padding: 18px 10px; border-top: 1px solid #D4D3EE;">Scale to total fleet energy</td>
+    </tr>
+    <tr>
+      <td style="padding: 18px 10px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE;">Prior stage</td>
+      <td style="padding: 18px 10px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE;">Enrollment curve</td>
+      <td style="padding: 18px 10px; border-top: 1px solid #D4D3EE;">Cost efficiency analysis</td>
+    </tr>
+  </tbody>
+</table>
+
+:::
+
+::: {.notes}
+Four data sources: NHTS trips define when vehicles travel and how much energy they need; GridStatus.io gives us actual 2025 net load for both regions; the Census scales our 10,000 simulated vehicles up to regional fleet sizes; and the discrete choice experiment from the prior stage translates incentive dollars into enrollment rates. Net load means total consumption minus variable renewables, so it is the demand that dispatchable generation must serve.
+:::
+
+## Vehicle & Charging Assumptions {.light-centered .center}
+
+```{=html}
+<div style="width:88%;margin:0 auto;background-image:radial-gradient(circle,#E0DBE5 0.6px,transparent 0.6px);background-size:18px 18px;padding:1.5em 1.2em;border-radius:18px;">
+
+ <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:0.9em;">
+
+  <div style="grid-column:1/3;background:#FFFFFF;border:1px solid #C7C1E5;border-radius:14px;padding:1em 0.6em 0.9em;box-shadow:0 14px 32px rgba(86,84,162,0.2),0 2px 6px rgba(44,62,80,0.07);display:flex;flex-direction:column;align-items:center;gap:0.4em;">
+   <div style="width:2.2em;height:2.2em;border-radius:0.55em;background:#EEEDF8;border:1px solid #C7C1E5;display:flex;align-items:center;justify-content:center;color:#5654A2;">
+    <i data-lucide="car-front" style="width:1.1em;height:1.1em;stroke-width:1.8;"></i>
+   </div>
+   <div style="font-family:'Maple Mono',monospace;font-size:0.42em;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#5654A2;">BEV Range</div>
+   <div style="font-size:0.72em;font-weight:700;color:#2C3E50;line-height:1.2;">200 miles</div>
+  </div>
+
+  <div style="grid-column:3/5;background:#FFFFFF;border:1px solid #F0DDB4;border-radius:14px;padding:1em 0.6em 0.9em;box-shadow:0 14px 32px rgba(196,136,26,0.2),0 2px 6px rgba(44,62,80,0.07);display:flex;flex-direction:column;align-items:center;gap:0.4em;">
+   <div style="width:2.2em;height:2.2em;border-radius:0.55em;background:#FEF5E7;border:1px solid #F0DDB4;display:flex;align-items:center;justify-content:center;color:#C4881A;">
+    <i data-lucide="zap" style="width:1.1em;height:1.1em;stroke-width:1.8;"></i>
+   </div>
+   <div style="font-family:'Maple Mono',monospace;font-size:0.42em;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#C4881A;">Charging</div>
+   <div style="font-size:0.72em;font-weight:700;color:#2C3E50;line-height:1.2;">Level 2 (6.48 kW)</div>
+  </div>
+
+  <div style="grid-column:5/7;background:#FFFFFF;border:1px solid #BCDFC0;border-radius:14px;padding:1em 0.6em 0.9em;box-shadow:0 14px 32px rgba(44,132,117,0.2),0 2px 6px rgba(44,62,80,0.07);display:flex;flex-direction:column;align-items:center;gap:0.4em;">
+   <div style="width:2.2em;height:2.2em;border-radius:0.55em;background:#E5F2EE;border:1px solid #BCDFC0;display:flex;align-items:center;justify-content:center;color:#2C8475;">
+    <i data-lucide="battery-charging" style="width:1.1em;height:1.1em;stroke-width:1.8;"></i>
+   </div>
+   <div style="font-family:'Maple Mono',monospace;font-size:0.42em;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#2C8475;">Battery SOC</div>
+   <div style="font-size:0.72em;font-weight:700;color:#2C3E50;line-height:1.2;">20% &ndash; 80%</div>
+  </div>
+
+  <div style="grid-column:2/4;background:#FFFFFF;border:1px solid #A6C4EA;border-radius:14px;padding:1em 0.6em 0.9em;box-shadow:0 14px 32px rgba(58,125,201,0.2),0 2px 6px rgba(44,62,80,0.07);display:flex;flex-direction:column;align-items:center;gap:0.4em;">
+   <div style="width:2.2em;height:2.2em;border-radius:0.55em;background:#DCE9FA;border:1px solid #A6C4EA;display:flex;align-items:center;justify-content:center;color:#3A7DC9;">
+    <i data-lucide="route" style="width:1.1em;height:1.1em;stroke-width:1.8;"></i>
+   </div>
+   <div style="font-family:'Maple Mono',monospace;font-size:0.42em;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#3A7DC9;">Travel Needs</div>
+   <div style="font-size:0.72em;font-weight:700;color:#2C3E50;line-height:1.2;">Guaranteed</div>
+  </div>
+
+  <div style="grid-column:4/6;background:#FFFFFF;border:1px solid #F0C5BA;border-radius:14px;padding:1em 0.6em 0.9em;box-shadow:0 14px 32px rgba(212,95,71,0.2),0 2px 6px rgba(44,62,80,0.07);display:flex;flex-direction:column;align-items:center;gap:0.4em;">
+   <div style="width:2.2em;height:2.2em;border-radius:0.55em;background:#FCEEEC;border:1px solid #F0C5BA;display:flex;align-items:center;justify-content:center;color:#D45F47;">
+    <i data-lucide="hand" style="width:1.1em;height:1.1em;stroke-width:1.8;"></i>
+   </div>
+   <div style="font-family:'Maple Mono',monospace;font-size:0.42em;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#D45F47;">Overrides</div>
+   <div style="font-size:0.72em;font-weight:700;color:#2C3E50;line-height:1.2;">2 &ndash; 3 per month</div>
+  </div>
+
+ </div>
+
+</div>
+```
+
+::: {.notes}
+Key assumptions: 200-mile BEVs (48.4 kWh, 0.242 kWh per mile) on Level 2 home charging at 7.2 kW with 90 percent efficiency, batteries kept between 20 and 80 percent, and travel is never compromised: sessions that cannot be shifted stay in place as override events, which stay within 2 to 3 per vehicle per month.
+:::
+
+## TOU window: 11 PM valley start performs best {.light-centered .center}
+
+![](/figs/study/tou-window-comparison.png){fig-align="center" width="92%" .purple-border}
+
+::: {.notes}
+Cost efficiency frontiers for the five TOU configurations in CAISO on the annual average day. S04, with the valley window starting at 11 PM, delivers the most peak shaving at every cost level, so all reported results use it. An 8 PM start is clearly worst: it opens the valley while the grid is still near its peak.
+:::
+
+## Seasonal Patterns: [CAISO]{style="color: #ED6D46;"} {.light-centered .center}
+
+::: {style="border: 1px solid #C7C1E5; border-radius: 14px; padding: 0; overflow: hidden; background: #FFFFFF; box-shadow: 0 14px 32px rgba(86, 84, 162, 0.12), 0 2px 6px rgba(44, 62, 80, 0.07);"}
+
+<table style="width: 100%; border-collapse: collapse; font-size: 28px; margin: 0;">
+  <thead>
+    <tr style="background-color: #EEEDF8;">
+      <th style="width: 25%; padding: 12px 10px; border-right: 1px solid #D4D3EE; border-bottom: 2px solid #C4C3E8; font-size: 30px; text-align: center;">Spring</th>
+      <th style="width: 25%; padding: 12px 10px; border-right: 1px solid #D4D3EE; border-bottom: 2px solid #C4C3E8; font-size: 30px; text-align: center;">Summer</th>
+      <th style="width: 25%; padding: 12px 10px; border-right: 1px solid #D4D3EE; border-bottom: 2px solid #C4C3E8; font-size: 30px; text-align: center;">Fall</th>
+      <th style="width: 25%; padding: 12px 10px; border-bottom: 2px solid #C4C3E8; font-size: 30px; text-align: center;">Winter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 6px; border-right: 1px solid #D4D3EE; text-align: center;"><img src="figs/study/caiso-seasonal-1.png" style="width: 100%; margin: 0; vertical-align: middle;"/></td>
+      <td style="padding: 6px; border-right: 1px solid #D4D3EE; text-align: center;"><img src="figs/study/caiso-seasonal-2.png" style="width: 100%; margin: 0; vertical-align: middle;"/></td>
+      <td style="padding: 6px; border-right: 1px solid #D4D3EE; text-align: center;"><img src="figs/study/caiso-seasonal-3.png" style="width: 100%; margin: 0; vertical-align: middle;"/></td>
+      <td style="padding: 6px; text-align: center;"><img src="figs/study/caiso-seasonal-4.png" style="width: 100%; margin: 0; vertical-align: middle;"/></td>
+    </tr>
+    <tr>
+      <td style="padding: 12px 6px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE; text-align: center; font-size: 24px;">3.7 GW (27.5 → 23.8)</td>
+      <td style="padding: 12px 6px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE; text-align: center; font-size: 24px;">3.7 GW (34.3 → 30.6)</td>
+      <td style="padding: 12px 6px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE; text-align: center; font-size: 24px;">3.8 GW (32.3 → 28.5)</td>
+      <td style="padding: 12px 6px; border-top: 1px solid #D4D3EE; text-align: center; font-size: 24px;">3.6 GW (29.1 → 25.5)</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px 6px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE; text-align: center; font-size: 24px;">13.5%</td>
+      <td style="padding: 12px 6px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE; text-align: center; font-size: 24px;">10.8%</td>
+      <td style="padding: 12px 6px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE; text-align: center; font-size: 24px;">11.8%</td>
+      <td style="padding: 12px 6px; border-top: 1px solid #D4D3EE; text-align: center; font-size: 24px;">12.4%</td>
+    </tr>
+    <tr>
+      <td colspan="4" style="padding: 12px 10px; border-top: 1px solid #D4D3EE; text-align: center;">Peak shave for all seasons: <strong>3.6–3.8 GW (10.8–13.5%)</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+:::
+
+::: {.notes}
+Seasonally, CAISO is remarkably consistent: 3.6 to 3.8 gigawatts in every season, because the solar-shaped profile keeps the peak-to-valley gap wide year-round. Summer has the highest absolute peak from air conditioning, but the shaving potential barely moves.
+:::
+
+## Seasonal Patterns: [NYISO]{style="color: #739C69;"} {.light-centered .center}
+
+::: {style="border: 1px solid #C7C1E5; border-radius: 14px; padding: 0; overflow: hidden; background: #FFFFFF; box-shadow: 0 14px 32px rgba(86, 84, 162, 0.12), 0 2px 6px rgba(44, 62, 80, 0.07);"}
+
+<table style="width: 100%; border-collapse: collapse; font-size: 28px; margin: 0;">
+  <thead>
+    <tr style="background-color: #EEEDF8;">
+      <th style="width: 25%; padding: 12px 10px; border-right: 1px solid #D4D3EE; border-bottom: 2px solid #C4C3E8; font-size: 30px; text-align: center;">Spring</th>
+      <th style="width: 25%; padding: 12px 10px; border-right: 1px solid #D4D3EE; border-bottom: 2px solid #C4C3E8; font-size: 30px; text-align: center;">Summer</th>
+      <th style="width: 25%; padding: 12px 10px; border-right: 1px solid #D4D3EE; border-bottom: 2px solid #C4C3E8; font-size: 30px; text-align: center;">Fall</th>
+      <th style="width: 25%; padding: 12px 10px; border-bottom: 2px solid #C4C3E8; font-size: 30px; text-align: center;">Winter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 6px; border-right: 1px solid #D4D3EE; text-align: center;"><img src="figs/study/nyiso-seasonal-1.png" style="width: 100%; margin: 0; vertical-align: middle;"/></td>
+      <td style="padding: 6px; border-right: 1px solid #D4D3EE; text-align: center;"><img src="figs/study/nyiso-seasonal-2.png" style="width: 100%; margin: 0; vertical-align: middle;"/></td>
+      <td style="padding: 6px; border-right: 1px solid #D4D3EE; text-align: center;"><img src="figs/study/nyiso-seasonal-3.png" style="width: 100%; margin: 0; vertical-align: middle;"/></td>
+      <td style="padding: 6px; text-align: center;"><img src="figs/study/nyiso-seasonal-4.png" style="width: 100%; margin: 0; vertical-align: middle;"/></td>
+    </tr>
+    <tr>
+      <td style="padding: 12px 6px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE; text-align: center; font-size: 24px;">1.5 GW (18.4 → 16.9)</td>
+      <td style="padding: 12px 6px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE; text-align: center; font-size: 24px;">1.6 GW (24.6 → 23.0)</td>
+      <td style="padding: 12px 6px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE; text-align: center; font-size: 24px;">1.5 GW (19.8 → 18.3)</td>
+      <td style="padding: 12px 6px; border-top: 1px solid #D4D3EE; text-align: center; font-size: 24px;">1.4 GW (22.1 → 20.7)</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px 6px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE; text-align: center; font-size: 24px;">8.2%</td>
+      <td style="padding: 12px 6px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE; text-align: center; font-size: 24px;">6.5%</td>
+      <td style="padding: 12px 6px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE; text-align: center; font-size: 24px;">7.6%</td>
+      <td style="padding: 12px 6px; border-top: 1px solid #D4D3EE; text-align: center; font-size: 24px;">6.3%</td>
+    </tr>
+    <tr>
+      <td colspan="4" style="padding: 12px 10px; border-top: 1px solid #D4D3EE; text-align: center;">Peak shave for all seasons: <strong>1.4–1.6 GW (6.3–8.2%)</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+:::
+
+::: {.notes}
+NYISO's winter is the exception: overnight space heating keeps the valley elevated, leaving less room for deferred charging and giving the smallest seasonal shaving at 1.4 gigawatts. The other three seasons cluster at 1.5 to 1.6.
+:::
+
+## Cost efficiency across BEV adoption rates {.light-centered .center}
+
+::: {.columns}
+::: {.column}
+![](/figs/study/caiso-efficiency-adoption.png){fig-align="center" width="100%" .purple-border}
+:::
+
+::: {.column}
+![](/figs/study/nyiso-efficiency-adoption.png){fig-align="center" width="100%" .purple-border}
+:::
+:::
+
+::: {.notes}
+The 1:1 BEV-to-household ratio is a near upper bound of adoption. At 1:2 and 1:4, the frontiers keep the same shape with proportionally smaller peak shaving and cost, so the moderate-enrollment conclusion holds at lower adoption as well.
+:::
+
+## How Do Pilot Programs Compare? {.light-centered .center}
+
+::: {style="border: 1px solid #C7C1E5; border-radius: 14px; padding: 0; overflow: hidden; background: #FFFFFF; box-shadow: 0 14px 32px rgba(86, 84, 162, 0.12), 0 2px 6px rgba(44, 62, 80, 0.07);"}
+
+<table style="width: 100%; border-collapse: collapse; font-size: 26px; margin: 0;">
+  <thead>
+    <tr style="background-color: #EEEDF8;">
+      <th style="width: 36%; padding: 12px 10px; border-right: 1px solid #D4D3EE; border-bottom: 2px solid #C4C3E8; font-size: 28px; text-align: center;">Program</th>
+      <th style="width: 34%; padding: 12px 10px; border-right: 1px solid #D4D3EE; border-bottom: 2px solid #C4C3E8; font-size: 28px; text-align: center;">Incentive</th>
+      <th style="width: 30%; padding: 12px 10px; border-bottom: 2px solid #C4C3E8; font-size: 28px; text-align: center;">Enrollment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 14px 10px; border-right: 1px solid #D4D3EE; text-align: center;">PCE Managed Charging<br><span style="color: #ED6D46;">(CAISO)</span></td>
+      <td style="padding: 14px 10px; border-right: 1px solid #D4D3EE; text-align: center;">$0 → $40 per month</td>
+      <td style="padding: 14px 10px; text-align: center;">1.4% → 10.6%</td>
+    </tr>
+    <tr>
+      <td style="padding: 14px 10px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE; text-align: center;">MCE Sync<br><span style="color: #ED6D46;">(CAISO)</span></td>
+      <td style="padding: 14px 10px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE; text-align: center;">$50 bonus + $10 per month</td>
+      <td style="padding: 14px 10px; border-top: 1px solid #D4D3EE; text-align: center;">10% of serviceable market</td>
+    </tr>
+    <tr>
+      <td style="padding: 14px 10px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE; text-align: center;">SmartCharge New York<br><span style="color: #739C69;">(NYISO)</span></td>
+      <td style="padding: 14px 10px; border-top: 1px solid #D4D3EE; border-right: 1px solid #D4D3EE; text-align: center;">Up to $400 per year</td>
+      <td style="padding: 14px 10px; border-top: 1px solid #D4D3EE; text-align: center;">~7% of registered EVs<br>(731 vehicles)</td>
+    </tr>
+  </tbody>
+</table>
+
+:::
+
+<br>
+
+::: {style="text-align: center; font-size: 28px;"}
+- Smart charging programs motivated EV owners to **charge off-peak**.
+- More incentive results in more enrollment.
+- Stated preference surveys are not calibrated against current pilot programs.
+:::
+
+::: {.notes}
+Three deployed pilot programs: two in CAISO territory, one in NYISO [@pce_ev_managed_charging_2025; @mce_sync_2024; @coned_smartcharge_2019].
+
+First, they motivated EV owners to charge off-peak: MCE Sync cut charging in the 4-to-9 PM window by nearly 90 percent.
+
+Second, more incentive means more enrollment. PCE's randomized pilot shows this directly: 1.4 percent with no payment, rising to 10.6 percent at 40 dollars a month.
+
+Third, real enrollment sits around 4 to 10 percent, below our 30 to 50 percent target. Stated preference overstates real behavior, and these pilots are small and short, so they carry their own biases. The survey gives an optimistic upper bound, but the field data confirms the direction the model predicts.
+:::
