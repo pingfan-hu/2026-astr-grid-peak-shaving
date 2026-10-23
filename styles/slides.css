@@ -187,3 +187,46 @@ th {
   border-radius: 999px;
   background: #9B8EA0;
 }
+
+/* Link pill on the self-intro slide: purple tint at rest, solid purple on hover. */
+.reveal a.link-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: 'Maple Mono', monospace;
+  font-size: 0.65em;
+  font-weight: 700;
+  color: #5654A2 !important;
+  background: #EEEDF8;
+  border: 1px solid #C7C1E5;
+  border-radius: 999px;
+  padding: 0.4em 1.1em;
+  text-decoration: none !important;
+  box-shadow: 0 2px 6px rgba(86, 84, 162, 0.15);
+  will-change: background-color, color, transform;
+  backface-visibility: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    transform 0.1s ease;
+}
+.reveal a.link-pill svg {
+  width: 1em;
+  height: 1em;
+  stroke-width: 2;
+}
+/* The external-link arrow is the last child, set a shade smaller and nudged
+   out so it reads as a marker on the pill's edge, not as a second subject. */
+.reveal a.link-pill svg:last-child {
+  width: 0.85em;
+  height: 0.85em;
+  margin-left: 0.05em;
+  opacity: 0.8;
+}
+.reveal a.link-pill:hover {
+  color: #F8F7F0 !important;
+  background: #5654A2;
+  border-color: #5654A2;
+  box-shadow: 0 2px 6px rgba(86, 84, 162, 0.15);
+}
+.reveal a.link-pill:active {
+  transform: scale(0.96);
+}
